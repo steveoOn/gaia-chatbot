@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as IconAvada } from "../../static/icon-avada.svg";
 
@@ -44,6 +44,14 @@ const ListWrapper = styled.ul`
 `;
 
 const ChatList = props => {
+  // 自动滚动至聊天气泡最下方
+  useEffect(() => {
+    let ele = document.querySelectorAll("li");
+    let lastEle = ele[ele.length - 1];
+    // console.log("after render", lastEle);
+    lastEle.scrollIntoView({ block: "end" });
+  });
+
   return (
     <ListWrapper>
       {props.chats.map(chat => (
