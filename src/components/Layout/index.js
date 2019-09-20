@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ReactComponent as IconBack } from "../../static/icon-arrow-back.svg";
 import { ReactComponent as IconTopGaga } from "../../static/icon-topbar-gaga.svg";
@@ -13,7 +14,9 @@ const Layout = props => {
   return (
     <Fragment>
       <NavBar>
-        <IconBack />
+        <Link to="/">
+          <IconBack />
+        </Link>
         盖雅精灵
         <IconTopGaga />
       </NavBar>
