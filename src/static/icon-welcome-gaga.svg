@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="190" height="190" viewBox="0 0 190 190">
+  <defs>
+    <circle id="icon-welcome-gaga-a" cx="77" cy="77" r="77"/>
+    <filter id="icon-welcome-gaga-b" width="140.3%" height="140.3%" x="-20.1%" y="-14.9%" filterUnits="objectBoundingBox">
+      <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="9"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.137254902   0 0 0 0 0.196078431   0 0 0 0 0.341176471  0 0 0 0.115930944 0"/>
+    </filter>
+    <linearGradient id="icon-welcome-gaga-d" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#438EAE"/>
+      <stop offset="100%" stop-color="#233257"/>
+    </linearGradient>
+    <linearGradient id="icon-welcome-gaga-e" x1="0%" x2="100%" y1="50%" y2="50%">
+      <stop offset="0%" stop-color="#00D953"/>
+      <stop offset="100%" stop-color="#00B089"/>
+    </linearGradient>
+    <linearGradient id="icon-welcome-gaga-f" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#00D953"/>
+      <stop offset="100%" stop-color="#00B089"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(18 10)">
+    <mask id="icon-welcome-gaga-c" fill="#fff">
+      <use xlink:href="#icon-welcome-gaga-a"/>
+    </mask>
+    <use fill="#000" filter="url(#icon-welcome-gaga-b)" xlink:href="#icon-welcome-gaga-a"/>
+    <use fill="#FFF" xlink:href="#icon-welcome-gaga-a"/>
+    <g mask="url(#icon-welcome-gaga-c)">
+      <g transform="translate(35 38)">
+        <g transform="translate(42.3)">
+          <path stroke="#ADE5A9" stroke-linecap="round" stroke-width="2.7" d="M0.070261887,29.2019843 C-0.532712185,21.5031879 2.79594707,16.5332118 8.10561008,12.9381866"/>
+          <g fill-rule="nonzero" transform="translate(.07)">
+            <rect width="14.4" height="14.4" fill="#000" opacity="0"/>
+            <path fill="url(#icon-welcome-gaga-d)" d="M7.2,12.9261657 L6.29504076,12.1054613 C3.08089356,9.18778188 0.958937034,7.26241049 0.958937034,4.90641106 C0.958937034,2.98103967 2.46615674,1.47383435 4.39151375,1.47383435 C5.47745908,1.47383435 6.51971562,1.9793636 7.1999856,2.77510089 C7.88025558,1.9793636 8.92251212,1.47383435 10.0084575,1.47383435 C11.9338288,1.47383435 13.4410342,2.98105405 13.4410342,4.90641106 C13.4410342,7.26241049 11.3190777,9.18778189 8.10493044,12.1054757 L7.2,12.9261657 Z"/>
+            <g transform="rotate(90 7.2 13.5)">
+              <rect width="14.4" height="14.4" fill="#000" opacity="0"/>
+              <path fill="url(#icon-welcome-gaga-d)" d="M7.2,12.9261657 L6.29504076,12.1054613 C3.08089356,9.18778188 0.958937034,7.26241049 0.958937034,4.90641106 C0.958937034,2.98103967 2.46615674,1.47383435 4.39151375,1.47383435 C5.47745908,1.47383435 6.51971562,1.9793636 7.1999856,2.77510089 C7.88025558,1.9793636 8.92251212,1.47383435 10.0084575,1.47383435 C11.9338288,1.47383435 13.4410342,2.98105405 13.4410342,4.90641106 C13.4410342,7.26241049 11.3190777,9.18778189 8.10493044,12.1054757 L7.2,12.9261657 Z"/>
+            </g>
+          </g>
+        </g>
+        <path fill="url(#icon-welcome-gaga-e)" d="M0,33.8301113 C28.8257009,26.9226008 56.9890658,27.3270395 84.6,33.8301113 L84.6,64.8 C84.6,79.7116882 72.5116882,91.8 57.6,91.8 L27,91.8 C12.0883118,91.8 1.82615513e-15,79.7116882 0,64.8 L0,33.8301113 L0,33.8301113 Z"/>
+        <path stroke="#233257" stroke-linecap="round" stroke-width="2.7" d="M38.7 63C38.7 56.5382684 33.4617316 51.3 27 51.3 20.5382684 51.3 15.3 56.5382684 15.3 63M70.2 63C70.2 56.5382684 64.9617316 51.3 58.5 51.3 52.0382684 51.3 46.8 56.5382684 46.8 63"/>
+        <path fill="url(#icon-welcome-gaga-f)" d="M41.4,97.2 L43.2,97.2 C53.6381818,97.2 62.1,105.661818 62.1,116.1 L62.1,124.2 L62.1,124.2 L22.5,124.2 L22.5,116.1 C22.5,105.661818 30.9618182,97.2 41.4,97.2 Z"/>
+        <g transform="translate(36.9 99.9)">
+          <path stroke="#0D5638" stroke-linecap="round" stroke-width="1.8" d="M7.74272461,2.37436523 L3.27524414,3.54243164" opacity=".282"/>
+          <g fill="#0F8253">
+            <circle cx="9" cy="1.8" r="1.8"/>
+            <circle cx="1.8" cy="3.6" r="1.8"/>
+          </g>
+          <path stroke="#0D5638" stroke-linecap="round" stroke-width="1.8" d="M7.74272461 6.3L3.27524414 7.46806641M7.74272461 9.9L3.27524414 11.0680664M7.74272461 13.5L3.27524414 14.6680664M7.74272461 17.1L3.27524414 18.2680664" opacity=".282"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

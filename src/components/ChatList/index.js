@@ -49,9 +49,12 @@ const ChatList = props => {
       {props.chats.map(chat => (
         <li key={chat.id} className={chat.isMe ? "is-me" : "not-me"}>
           {!chat.isMe && <IconAvada style={{ marginLeft: "16px" }} />}
-          <p className={chat.isMe ? "is-me-chat" : "not-me-chat"}>
-            {chat.response}
-          </p>
+          <p
+            className={chat.isMe ? "is-me-chat" : "not-me-chat"}
+            dangerouslySetInnerHTML={{ __html: `${chat.response}` }}
+          />
+          {/* {chat.response}
+          </p> */}
         </li>
       ))}
     </ListWrapper>
