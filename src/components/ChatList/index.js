@@ -39,7 +39,7 @@ const ListWrapper = styled.ul`
 
   list-style: none;
   padding-left: 0;
-  height: 43rem;
+  height: 37rem;
   overflow: scroll;
 `;
 
