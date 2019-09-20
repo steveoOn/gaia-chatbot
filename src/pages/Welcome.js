@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import fetch from "isomorphic-unfetch";
 import { ReactComponent as IconWelcomeGaga } from "../static/icon-welcome-gaga.svg";
 import { ReactComponent as IconArrow } from "../static/icon-arrow.svg";
 import { Question } from "../components";
@@ -79,28 +80,34 @@ const ContentWraper = styled.div`
   }
 `;
 
-const Welcome = props => (
-  <div style={{ background: "#F6F8FA" }}>
-    <GreenBg />
-    <ContentWraper>
-      <IconWelcomeGaga className="icon-welcome-gaga" />
-      <Card>
-        <h1 className="welcome-h1">
-          Hi，我是小盖
-          <br />
-          你的智能小助手~
-        </h1>
-        <h2 className="welcome-h2">
-          我可以回答你的任何问题，你可以试着这样问问我
-        </h2>
-        <Line />
-        <Question questions={ques} />
-      </Card>
-      <Link to="/chat" className="to-chat">
-        <IconArrow />
-      </Link>
-    </ContentWraper>
-  </div>
-);
+const Welcome = props => {
+  fetch(
+    "http://chatbot.gaiaworkforce.com:2002/api/chat?question=北京&SessionId=1"
+  ).then(data => console.log("data is:", data));
+
+  return (
+    <div style={{ background: "#F6F8FA" }}>
+      <GreenBg />
+      <ContentWraper>
+        <IconWelcomeGaga className="icon-welcome-gaga" />
+        <Card>
+          <h1 className="welcome-h1">
+            Hi，我是小盖
+            <br />
+            你的智能小助手~
+          </h1>
+          <h2 className="welcome-h2">
+            我可以回答你的任何问题，你可以试着这样问问我
+          </h2>
+          <Line />
+          <Question questions={ques} />
+        </Card>
+        <Link to="/chat" className="to-chat">
+          <IconArrow />
+        </Link>
+      </ContentWraper>
+    </div>
+  );
+};
 
 export default Welcome;
