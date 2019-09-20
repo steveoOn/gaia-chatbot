@@ -53,8 +53,6 @@ const ChatList = props => {
             className={chat.isMe ? "is-me-chat" : "not-me-chat"}
             dangerouslySetInnerHTML={{ __html: `${chat.response}` }}
           />
-          {/* {chat.response}
-          </p> */}
         </li>
       ))}
     </ListWrapper>
