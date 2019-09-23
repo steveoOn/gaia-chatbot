@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Chat from "./pages/Chat";
 import { TextContext } from "./context";
-// import console = require("console");
 
 const defaultChat = [
   {
@@ -12,25 +11,28 @@ const defaultChat = [
     isMe: false
   }
 ];
-console.log(defaultChat.length);
 
 function App() {
   const [text, setText] = useState(defaultChat);
-  console.log(text.length);
 
-  const updateText = obj => {
-    console.log("from app obj is:", obj);
-    debugger;
-    setText(text => [...text, obj]);
-    // text.push(obj);
-    console.log(text);
+  const updateTextMe = meText => {
+    // id 使用 ++text.length 会修改 context.text 的长度，换成 text.length + 1 可解决
+    let newText = { id: text.length + 1, response: meText, isMe: true };
+    setText([...text, newText]);
+  };
+  const updateTextRes = (resText, meText) => {
+    // id 使用 ++text.length 会修改 context.text 的长度，换成 text.length + 1 可解决
+    let newTextRes = { id: text.length + 2, response: resText, isMe: false };
+    let newTextMe = { id: text.length + 1, response: meText, isMe: true };
+    setText([...text, newTextMe, newTextRes]);
   };
 
   return (
     <TextContext.Provider
       value={{
         text,
-        updateText
+        updateTextMe,
+        updateTextRes
       }}
     >
       <BrowserRouter>

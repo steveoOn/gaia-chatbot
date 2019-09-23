@@ -2,5 +2,6 @@ import React from "react";
 
 export const TextContext = React.createContext({
   text: [],
-  updateText: () => {}
+  updateTextMe: () => {},
+  updateTextRes: () => {}
 });

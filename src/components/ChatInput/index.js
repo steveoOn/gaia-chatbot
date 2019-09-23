@@ -45,24 +45,22 @@ const Form = styled.form`
 
 const ChatInput = props => {
   const [input, setInput] = useState("");
-  const { text, updateText } = useContext(TextContext);
+  const { updateTextMe, updateTextRes } = useContext(TextContext);
 
   const submitInput = async e => {
     e.preventDefault();
-    // console.log("from ChatInput context text is:", text);
-    // console.log("after updateText:", text);
-    updateText({ id: ++text.length, response: input, isMe: true });
-    // try {
-    //   await updateText(input, true);
-    //   const res = await fetch(
-    //     `http://localhost:8010/proxy/api/chat?question=${input}&SessionId=1`
-    //   );
-    //   data = await res.text();
-    //   console.log("data is:", data);
-    //   // await updateText(data, false);
-    // } catch (err) {
-    //   throw err;
-    // }
+    updateTextMe(input);
+    try {
+      const res = await fetch(
+        `http://localhost:8010/proxy/api/chat?question=${input}&SessionId=1`
+      );
+      const data = await res.text();
+      console.log("data is:", data);
+      if (data) updateTextRes(data, input);
+      setInput("");
+    } catch (err) {
+      throw err;
+    }
   };
 
   return (

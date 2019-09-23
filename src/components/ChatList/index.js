@@ -58,7 +58,6 @@ const ChatList = props => {
     <ListWrapper>
       {props.chats.map(chat => {
         // console.log("from ChatList:", chat);
-        debugger;
         return (
           <li key={chat.id} className={chat.isMe ? "is-me" : "not-me"}>
             {!chat.isMe && <IconAvada style={{ marginLeft: "16px" }} />}
