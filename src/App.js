@@ -2,13 +2,28 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Chat from "./pages/Chat";
-import { TextContext, DATA } from "./context";
+import { TextContext } from "./context";
+// import console = require("console");
+
+const defaultChat = [
+  {
+    id: 1,
+    response: "<span>我是小盖，请问有什么可以帮到您的吗？</span>",
+    isMe: false
+  }
+];
+console.log(defaultChat.length);
 
 function App() {
-  const [text, setText] = useState(DATA);
+  const [text, setText] = useState(defaultChat);
+  console.log(text.length);
 
-  const updateText = (value, isMe) => {
-    setText([...text, { id: ++text.length, response: value, isMe }]);
+  const updateText = obj => {
+    console.log("from app obj is:", obj);
+    debugger;
+    setText(text => [...text, obj]);
+    // text.push(obj);
+    console.log(text);
   };
 
   return (

@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import fetch from "isomorphic-unfetch";
 import { ReactComponent as IconWelcomeGaga } from "../static/icon-welcome-gaga.svg";
 import { ReactComponent as IconArrow } from "../static/icon-arrow.svg";
 import { Question } from "../components";
@@ -81,10 +80,6 @@ const ContentWraper = styled.div`
 `;
 
 const Welcome = props => {
-  fetch(
-    "http://chatbot.gaiaworkforce.com:2002/api/chat?question=北京&SessionId=1"
-  ).then(data => console.log("data is:", data));
-
   return (
     <div style={{ background: "#F6F8FA" }}>
       <GreenBg />

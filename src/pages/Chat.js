@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import styled from "styled-components";
+import React, { useContext } from "react";
+// import styled from "styled-components";
 import { Layout, ChatList, ChatInput } from "../components";
 import { TextContext } from "../context";
 

@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { ReactComponent as IconAvada } from "../../static/icon-avada.svg";
+// import { TextContext } from "../../context";
+// import console = require("console");
 
 const ListWrapper = styled.ul`
   .not-me {
@@ -54,15 +56,19 @@ const ChatList = props => {
 
   return (
     <ListWrapper>
-      {props.chats.map(chat => (
-        <li key={chat.id} className={chat.isMe ? "is-me" : "not-me"}>
-          {!chat.isMe && <IconAvada style={{ marginLeft: "16px" }} />}
-          <p
-            className={chat.isMe ? "is-me-chat" : "not-me-chat"}
-            dangerouslySetInnerHTML={{ __html: `${chat.response}` }}
-          />
-        </li>
-      ))}
+      {props.chats.map(chat => {
+        // console.log("from ChatList:", chat);
+        debugger;
+        return (
+          <li key={chat.id} className={chat.isMe ? "is-me" : "not-me"}>
+            {!chat.isMe && <IconAvada style={{ marginLeft: "16px" }} />}
+            <p
+              className={chat.isMe ? "is-me-chat" : "not-me-chat"}
+              dangerouslySetInnerHTML={{ __html: `${chat.response}` }}
+            />
+          </li>
+        );
+      })}
     </ListWrapper>
   );
 };
