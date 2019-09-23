@@ -49,6 +49,7 @@ const ChatInput = props => {
 
   const submitInput = async e => {
     e.preventDefault();
+    if(!input) return;
     updateTextMe(input);
     try {
       const res = await fetch(
