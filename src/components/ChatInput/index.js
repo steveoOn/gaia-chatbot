@@ -52,7 +52,7 @@ const ChatInput = props => {
     updateTextMe(input);
     try {
       const res = await fetch(
-        `http://localhost:8010/proxy/api/chat?question=${input}&SessionId=1`
+        `/api/chat?question=${input}&SessionId=1`
       );
       const data = await res.text();
       console.log("data is:", data);
