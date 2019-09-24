@@ -30,14 +30,16 @@ const Form = styled.form`
     border: none;
     width: 72%;
     outline: none;
+    font-size: 14px;
+    color: #233257;
   }
 
   button {
     border: none;
-    padding: 0;
+    padding: 6px;
     position: absolute;
-    top: 16px;
-    right: 2.4rem;
+    top: 13px;
+    right: 2.2rem;
     background: none;
     outline: none;
   }
@@ -49,11 +51,10 @@ const ChatInput = props => {
 
   const submitInput = async e => {
     e.preventDefault();
+    if (!input) return;
     updateTextMe(input);
     try {
-      const res = await fetch(
-        `http://localhost:8010/proxy/api/chat?question=${input}&SessionId=1`
-      );
+      const res = await fetch(`/api/chat?question=${input}&SessionId=1`);
       const data = await res.text();
       console.log("data is:", data);
       if (data) updateTextRes(data, input);
