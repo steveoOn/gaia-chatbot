@@ -1,51 +1,11 @@
 import React, { useState, useContext } from "react";
-import styled from "styled-components";
+import "./index.scss";
 import { TextContext } from "../../context";
 import { ReactComponent as IconIdea } from "../../static/icon-idea.svg";
 import { ReactComponent as IconSend } from "../../static/icon-send.svg";
 import { ReactComponent as IconBottomGaga } from "../../static/icon-bottom-gaga.svg";
 
-const Form = styled.form`
-  position: relative;
-  text-align: center;
-
-  .icon-idea {
-    position: absolute;
-    top: 14px;
-    left: 2.4rem;
-  }
-
-  .icon-bottom-gaga {
-    position: absolute;
-    top: -3.5rem;
-    left: 2rem;
-  }
-
-  input {
-    background: #ffffff;
-    box-shadow: 0 0 20px 0 rgba(35, 50, 87, 0.12);
-    border-radius: 24px;
-    padding: 18px 20px 18px 50px;
-    -webkit-appearance: none;
-    border: none;
-    width: 72%;
-    outline: none;
-    font-size: 14px;
-    color: #233257;
-  }
-
-  button {
-    border: none;
-    padding: 6px;
-    position: absolute;
-    top: 13px;
-    right: 2.2rem;
-    background: none;
-    outline: none;
-  }
-`;
-
-const ChatInput = props => {
+const ChatInput = () => {
   const [input, setInput] = useState("");
   const { updateTextMe, updateTextRes } = useContext(TextContext);
 
@@ -65,7 +25,7 @@ const ChatInput = props => {
   };
 
   return (
-    <Form onSubmit={submitInput}>
+    <form onSubmit={submitInput} className="input-form-wrapper">
       <IconBottomGaga className="icon-bottom-gaga" />
       <IconIdea className="icon-idea" />
       <input
@@ -79,7 +39,7 @@ const ChatInput = props => {
       <button onClick={submitInput}>
         <IconSend />
       </button>
-    </Form>
+    </form>
   );
 };
 
