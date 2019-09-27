@@ -1,3 +1,5 @@
+@import "../../style/Global.scss";
+
 .list-wrapper {
   .not-me {
     text-align: left;
@@ -10,14 +12,14 @@
 
   .not-me-chat {
     margin-left: 9px;
-    background: #f6f8fa;
+    background: $light-color;
     border-radius: 0 28px 28px 28px;
     font-size: 14px;
     color: #233257;
   }
 
   .is-me-chat {
-    background: #00c171;
+    background: $focus-color;
     border-radius: 28px 28px 0 28px;
     font-size: 14px;
     color: #ffffff;

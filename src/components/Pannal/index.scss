@@ -1,0 +1,30 @@
+@import "../../style/Global.scss";
+
+.pannal-wrapper {
+  background: #ffffff;
+  box-shadow: 0 0 20px 0 rgba(35, 50, 87, 0.12);
+  border-radius: 28px 28px 0 0;
+  z-index: 2;
+  padding: 24px;
+  height: 336px;
+  /*stretch 替代 100% 可以忽略元素内边距而沾满屏幕宽度*/
+  width: stretch;
+  overflow: scroll;
+  position: absolute;
+  bottom: 7rem;
+
+  h2 {
+    font-size: 18px;
+    color: $submain-color;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  background: red;
+
+  svg {
+    margin-right: 14px;
+  }
+}

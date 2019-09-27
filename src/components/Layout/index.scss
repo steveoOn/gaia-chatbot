@@ -1,3 +1,5 @@
+@import "../../style/Global.scss";
+
 nav {
   background: #ffffff;
   box-shadow: 0 6px 12px 0 rgba(35, 50, 87, 0.08);
@@ -6,7 +8,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
-  color: #a2a9bb;
+  color: $submain-color;
   font-weight: 600;
 
   a {

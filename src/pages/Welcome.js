@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import nanoid from "nanoid";
 import { ReactComponent as IconWelcomeGaga } from "../static/icon-welcome-gaga.svg";
 import { ReactComponent as IconArrow } from "../static/icon-arrow.svg";
 import { Question } from "../components";
@@ -11,7 +12,19 @@ const ques = [
   { id: 3, content: "为什么打不上卡?" }
 ];
 
+const generateId = () => {
+  let newQues = [...ques];
+
+  for (let i = 0; i < ques.length; i++) {
+    let randomId = nanoid(10);
+    newQues[i]["id"] = randomId;
+  }
+  return newQues;
+};
+
 const Welcome = () => {
+  const randomIdQues = generateId();
+
   return (
     <div className="welcome-wrapper">
       <div className="green-bg" />
@@ -27,7 +40,7 @@ const Welcome = () => {
             我可以回答你的任何问题，你可以试着这样问问我
           </h2>
           <hr />
-          <Question questions={ques} />
+          <Question questions={randomIdQues} />
         </div>
         <Link to="/chat" className="to-chat">
           <IconArrow />

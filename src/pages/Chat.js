@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Layout, ChatList, ChatInput } from "../components";
+import { Layout, ChatList, ChatInput, Pannal } from "../components";
 import { TextContext } from "../context";
 
 const Chat = () => {
@@ -9,6 +9,7 @@ const Chat = () => {
     <Layout>
       <ChatList chats={text} />
       <ChatInput />
+      <Pannal />
     </Layout>
   );
 };
