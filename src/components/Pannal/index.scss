@@ -9,9 +9,9 @@
   height: 336px;
   /*stretch 替代 100% 可以忽略元素内边距而沾满屏幕宽度*/
   width: stretch;
-  overflow: scroll;
   position: absolute;
-  bottom: 7rem;
+  bottom: 0;
+  // animation: pannalDown 1s cubic-bezier(0.2, 0.8, 0.2, 1) reverse forwards;
 
   h2 {
     font-size: 18px;
@@ -22,9 +22,29 @@
 .title {
   display: flex;
   align-items: center;
-  background: red;
 
   svg {
     margin-right: 14px;
   }
+
+  span {
+    $height: 3;
+    $width: 7%;
+    width: $width;
+    height: $height * 1px;
+    border-radius: $height/2 * 1px;
+    background: darken($light-color, 10%);
+    position: absolute;
+    top: 0.5rem;
+    left: 50% - $width/2;
+  }
 }
+
+// @keyframes pannalDown {
+//   0% {
+//     bottom: 0;
+//   }
+//   100% {
+//     bottom: -24rem;
+//   }
+// }

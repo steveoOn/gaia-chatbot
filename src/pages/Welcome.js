@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import nanoid from "nanoid";
+import { generateId } from "../container/generateId";
 import { ReactComponent as IconWelcomeGaga } from "../static/icon-welcome-gaga.svg";
 import { ReactComponent as IconArrow } from "../static/icon-arrow.svg";
 import { Question } from "../components";
@@ -12,18 +12,8 @@ const ques = [
   { id: 3, content: "为什么打不上卡?" }
 ];
 
-const generateId = () => {
-  let newQues = [...ques];
-
-  for (let i = 0; i < ques.length; i++) {
-    let randomId = nanoid(10);
-    newQues[i]["id"] = randomId;
-  }
-  return newQues;
-};
-
 const Welcome = () => {
-  const randomIdQues = generateId();
+  const randomIdQues = generateId(ques);
 
   return (
     <div className="welcome-wrapper">

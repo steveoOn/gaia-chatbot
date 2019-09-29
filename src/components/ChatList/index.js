@@ -6,8 +6,11 @@ const ChatList = props => {
   // 自动滚动至聊天气泡最下方
   useEffect(() => {
     let ele = document.querySelectorAll("li");
-    let lastEle = ele[ele.length - 1];
-    // console.log("after render", lastEle);
+    let onlyChatList = Object.values(ele).filter(
+      li => li.className === "not-me" || li.className === "is-me"
+    );
+    let lastEle = onlyChatList[onlyChatList.length - 1];
+    // console.log("type of:", lastEle);
     lastEle.scrollIntoView({ block: "end" });
   });
 

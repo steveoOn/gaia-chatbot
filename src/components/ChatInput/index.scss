@@ -1,14 +1,15 @@
 @import "../../style/Global.scss";
 
+@mixin btn-pure {
+  position: absolute;
+  border: none;
+  background: none;
+  outline: none;
+}
+
 .input-form-wrapper {
   position: relative;
   text-align: center;
-
-  .icon-idea {
-    position: absolute;
-    top: 14px;
-    left: 2.4rem;
-  }
 
   .icon-bottom-gaga {
     position: absolute;
@@ -29,13 +30,17 @@
     color: $main-color;
   }
 
-  button {
-    border: none;
+  .btn-submit {
+    @include btn-pure();
     padding: 6px;
-    position: absolute;
     top: 13px;
     right: 2.2rem;
-    background: none;
-    outline: none;
+  }
+
+  .btn-question {
+    @include btn-pure();
+    top: 1rem;
+    left: 2rem;
+    padding: 0 0.5rem;
   }
 }
