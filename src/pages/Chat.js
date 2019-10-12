@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Layout, ChatList, ChatInput, Pannal } from "../components";
-import { TextContext } from "../context";
+import { useMsg } from "../container/useMsg";
 
 const Chat = () => {
   const [isPannalOpen, setIsPannalOpen] = useState(false);
-  const { text } = useContext(TextContext);
+  const { text } = useMsg();
+  // console.log("text from useMsg", text);
 
   const tagglePannal = () => {
     setIsPannalOpen(!isPannalOpen);

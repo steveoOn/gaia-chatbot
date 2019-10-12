@@ -1,13 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import "./index.scss";
-import { TextContext } from "../../context";
+import { useMsg } from "../../container/useMsg";
 import { ReactComponent as IconIdea } from "../../static/icon-idea.svg";
 import { ReactComponent as IconSend } from "../../static/icon-send.svg";
 import { ReactComponent as IconBottomGaga } from "../../static/icon-bottom-gaga.svg";
 
 const ChatInput = props => {
   const [input, setInput] = useState("");
-  const { updateTextMe, updateTextRes } = useContext(TextContext);
+  const { updateTextMe, updateTextRes } = useMsg();
 
   const submitInput = async e => {
     e.preventDefault();
