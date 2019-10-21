@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+import { motion } from "framer-motion";
 
 const QuestionList = props => {
   return (
@@ -9,7 +10,13 @@ const QuestionList = props => {
       }
     >
       {props.questions.map(question => (
-        <li key={question.id}>{question.content}</li>
+        <motion.li
+          key={question.id}
+          onClick={props.onSelectList}
+          whileTap={{ scale: 0.9 }}
+        >
+          {question.content}
+        </motion.li>
       ))}
     </ul>
   );

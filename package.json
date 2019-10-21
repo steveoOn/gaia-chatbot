@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "contentful": "^7.10.0",
+    "framer-motion": "^1.6.13",
     "isomorphic-unfetch": "^3.0.0",
     "nanoid": "^2.1.1",
     "node-sass": "^4.12.0",

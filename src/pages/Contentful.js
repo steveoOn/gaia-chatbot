@@ -37,7 +37,7 @@ const TestContentful = () => {
   return (
     <React.Fragment>
       {posts.map(post => (
-        <div key={post.sys.id}>
+        <div key={post.sys.id} className="contentful-wrapper">
           <h1>{post.fields.title}</h1>
           <h5>{post.fields.description}</h5>
           <ReactMarkdown source={post.fields.project} />

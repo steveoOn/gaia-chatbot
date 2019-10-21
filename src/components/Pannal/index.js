@@ -1,8 +1,11 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Question } from "..";
 import "./index.scss";
 import { generateId } from "../../container/generateId";
 import { ReactComponent as IconIdea } from "../../static/icon-idea.svg";
+import { useMsg } from "../../container/useMsg";
+import { getAnswer } from "../../container/getAnswer";
 
 const ques = [
   { id: 1, content: "最近迭代了什么新功能?" },
@@ -13,17 +16,32 @@ const ques = [
 ];
 
 const Pannal = props => {
+  const { updateTextMe, updateTextRes } = useMsg();
+
   const randomIdQues = generateId(ques);
 
+  const selectList = async e => {
+    let text = e.target.innerText;
+    updateTextMe(text);
+    const answer = await getAnswer(`/api/chat?question=${text}&SessionId=1`);
+    if (answer) updateTextRes(answer, text);
+  };
+
   return (
-    <div className="pannal-wrapper">
+    <motion.div className="pannal-wrapper">
       <header className="title">
-        <IconIdea onClick={props.ideaClick} />
+        <IconIdea />
         <h2>有什么想问的问题吗？</h2>
-        <span />
+        <motion.div
+          className="drag-handler"
+          whileTap={{ y: 5 }}
+          onTap={props.ideaClick}
+        >
+          <span />
+        </motion.div>
       </header>
-      <Question questions={randomIdQues} forChat />
-    </div>
+      <Question questions={randomIdQues} onSelectList={selectList} forChat />
+    </motion.div>
   );
 };
 

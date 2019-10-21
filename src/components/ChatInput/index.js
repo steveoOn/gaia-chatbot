@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./index.scss";
 import { useMsg } from "../../container/useMsg";
+import { getAnswer } from "../../container/getAnswer";
 import { ReactComponent as IconIdea } from "../../static/icon-idea.svg";
 import { ReactComponent as IconSend } from "../../static/icon-send.svg";
 import { ReactComponent as IconBottomGaga } from "../../static/icon-bottom-gaga.svg";
@@ -13,15 +14,9 @@ const ChatInput = props => {
     e.preventDefault();
     if (!input) return;
     updateTextMe(input);
-    try {
-      const res = await fetch(`/api/chat?question=${input}&SessionId=1`);
-      const data = await res.text();
-      console.log("data is:", data);
-      if (data) updateTextRes(data, input);
-      setInput("");
-    } catch (err) {
-      throw err;
-    }
+    setInput("");
+    const answer = await getAnswer(`/api/chat?question=${input}&SessionId=1`);
+    if (answer) updateTextRes(answer, input);
   };
 
   return (
