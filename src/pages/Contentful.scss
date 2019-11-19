@@ -116,4 +116,31 @@ $L: 715px;
     border-width: 0.5px;
     border-color: rgba(0, 0, 0, 0.08);
   }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    color: $main;
+
+    th {
+      border-bottom: 1px solid $minorSub;
+      text-align: left;
+      height: 3rem;
+      padding: 0 0.5rem;
+    }
+
+    td {
+      border-bottom: 1px solid $minorSub;
+      padding: 0.5rem;
+
+      img {
+        max-width: 10%;
+      }
+    }
+
+    tr:hover {
+      background: $cards;
+    }
+  }
 }

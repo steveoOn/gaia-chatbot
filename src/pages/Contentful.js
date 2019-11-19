@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createClient } from "contentful";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown/with-html";
 import "./Contentful.scss";
 
 const client = createClient({
@@ -40,7 +40,8 @@ const TestContentful = () => {
         <div key={post.sys.id} className="contentful-wrapper">
           <h1>{post.fields.title}</h1>
           <h5>{post.fields.description}</h5>
-          <ReactMarkdown source={post.fields.project} />
+          {/* unable escapeHtml in order to use HTML tag in Markdown like <video> */}
+          <ReactMarkdown source={post.fields.project} escapeHtml={false} />
         </div>
       ))}
     </React.Fragment>
